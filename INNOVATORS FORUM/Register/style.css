@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+ 
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+.bubbles{
+  position: absolute;
+  bottom: -120px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  width: 100%;
+  justify-content: space-around;
+}
+.bubbles span{
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: move 10s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes move {
+  100%{
+    transform: translateY(-100vh);
+  }
+}
+.bubbles span.one{
+  animation-delay: 2.2s;
+  transform: scale(2.15)
+}
+.bubbles span.two{
+  animation-delay: 3.5s;
+  transform: scale(1.55)
+}
+.bubbles span.three{
+  animation-delay: 0.2s;
+  transform: scale(0.35)
+}
+.bubbles span.four{
+  animation-delay: 6s;
+  transform: scale(2.15)
+}
+.bubbles span.five{
+  animation-delay: 7s;
+  transform: scale(0.5)
+}
+.bubbles span.six{
+  animation-delay: 4s;
+  transform: scale(2.5)
+}
+.bubbles span.seven{
+  animation-delay: 3
+  transform: scale(1.5)
+}
+.bubbles span:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 40%;
+  transform: skew(45deg) translateX(150px);
+  background: rgba(255, 255, 255, 0.15);
+  animation: mirror 3s linear infinite;
+}
+@keyframes mirror {
+  100%{
+    transform: translateX(-450px);
+  }
+}
+.bubbles span.one:before{
+  animation-delay: 1.5s;
+}
+.bubbles span.two:before{
+  animation-delay: 3.5s;
+}
+.bubbles span.three:before{
+  animation-delay: 2.5s;
+}
+.bubbles span.four:before{
+  animation-delay: 7.5s;
+}
+.bubbles span.five:before{
+  animation-delay: 4.5s;
+}
+.bubbles span.six:before{
+  animation-delay: 0.5s;
+}
+.bubbles span.seven:before{
+  animation-delay: 6s;
+}
